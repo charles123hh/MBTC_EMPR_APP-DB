@@ -154,3 +154,10 @@ ADD UNIQUE (EmployeeID);
 
 GO
 SP_HELP Developer
+
+GO
+ALTER TABLE ServiceRequest
+ADD UNIQUE (SRNo);
+
+GO
+SP_HELP ServiceRequest
