@@ -107,6 +107,21 @@ CREATE TABLE ServiceRequest(
 GO
 SP_HELP ServiceRequest
 
+GO
+CREATE TABLE DevAssignment(
+	DevAssignmentID int IDENTITY(1,1) PRIMARY KEY,
+	DeveloperID int NOT NULL FOREIGN KEY REFERENCES Developer(DeveloperID),
+	ServiceRequestID int NOT NULL FOREIGN KEY REFERENCES ServiceRequest(ServiceRequestID),
+	AssignmentTypeID int NOT NULL FOREIGN KEY REFERENCES AssignmentType(AssignmentTypeID),
+	DateCreated datetime NOT NULL,
+	CreatedBy varchar(20) NOT NULL,
+	DateModified datetime,
+	ModifiedBy varchar(20) 
+)
+
+GO
+SP_HELP DevAssignment
+
 
 
 
