@@ -122,6 +122,18 @@ CREATE TABLE DevAssignment(
 GO
 SP_HELP DevAssignment
 
+GO
+CREATE TABLE DevRating(
+	DevRatingID int IDENTITY(1,1) PRIMARY KEY,
+	DeveloperID int NOT NULL FOREIGN KEY REFERENCES Developer(DeveloperID),
+	Rating int NOT NULL,
+	Year int NOT NULL,
+	DateCreated datetime NOT NULL,
+	CreatedBy varchar(20) NOT NULL,
+);
+
+GO
+SP_HELP DevRating
 
 
 
