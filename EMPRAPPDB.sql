@@ -148,5 +148,9 @@ CREATE TABLE BatchFile(
 GO
 SP_HELP BatchFile
 
+GO
+ALTER TABLE Developer
+ADD UNIQUE (EmployeeID);
 
-
+GO
+SP_HELP Developer
