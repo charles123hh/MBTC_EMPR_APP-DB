@@ -129,12 +129,24 @@ CREATE TABLE DevRating(
 	Rating int NOT NULL,
 	Year int NOT NULL,
 	DateCreated datetime NOT NULL,
-	CreatedBy varchar(20) NOT NULL,
+	CreatedBy varchar(20) NOT NULL
 );
 
 GO
 SP_HELP DevRating
 
+GO
+CREATE TABLE BatchFile(
+	BatchFileID int IDENTITY(1,1) PRIMARY KEY,
+	Filename varchar(50) NOT NULL,
+	Status varchar(20) NOT NULL,
+	Items int NOT NULL,
+	DateCreated datetime NOT NULL,
+	CreatedBy varchar(20) NOT NULL
+);
+
+GO
+SP_HELP BatchFile
 
 
 
