@@ -65,6 +65,31 @@ VALUES('DPR', GETDATE(), 'Default'),
 GO
 SELECT * FROM SRType
 
+GO
+CREATE TABLE Developer (
+	 DeveloperID int IDENTITY(1,1) PRIMARY KEY,
+	 EmployeeID varchar(20) NOT NULL,
+	 FirstName varchar(50) NOT NULL,
+	 MiddleName varchar(50),
+	 LastName varchar(50) NOT NULL,
+	 DateHire DATETIME NOT NULL,
+	 isActive BIT NOT NULL,
+	 MetrobankEmail varchar(50),
+	 Homeddress varchar(200),
+	 CityProvince varchar(50),
+	 ContactNumber varchar(20),
+	 DepartmentID INT NOT NULL FOREIGN KEY REFERENCES Department(DepartmentID),
+	 SupervisorID INT FOREIGN KEY REFERENCES Developer(DeveloperID),
+	 DateCreated DATETIME NOT NULL,
+	 CreatedBy varchar(20) NOT NULL,
+	 DateModified DATETIME,
+	 ModifiedBy varchar(20) 
+);
+
+GO
+SP_HELP Developer
+
+
 
 
 
